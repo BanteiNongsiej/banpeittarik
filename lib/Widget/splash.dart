@@ -71,6 +71,16 @@ class SplashScreen extends StatelessWidget {
                     letterSpacing: 1.2,
                   ),
                 ),
+                Text(
+                  '🤣Da ym Sngewthuh Khasi, Dep nai use ka app🤣',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.2,
+                  ),
+                ),
               ],
             ),
           ),

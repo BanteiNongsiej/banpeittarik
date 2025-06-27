@@ -28,7 +28,7 @@ class TarikDrawer extends StatelessWidget {
                 ),
               ),
               accountName: const Text(
-                'Ban Peit Tarik',
+                'Peit Tarik',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
