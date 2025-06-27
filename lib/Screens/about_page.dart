@@ -15,13 +15,13 @@ class AboutScreen extends StatelessWidget {
       ),
       backgroundColor: const Color(0xFFe0eafc),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: const Color(0xFFcfdef3),
         elevation: 0,
         title: const Text(
           'Shaphang ka App',
           style: TextStyle(color: Colors.black87),
         ),
-        iconTheme: const IconThemeData(color: Colors.black87),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

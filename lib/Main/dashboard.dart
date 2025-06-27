@@ -41,6 +41,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
         },
       ),
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.black, 
+        ),
         elevation: 0,
         backgroundColor: const Color(
           0xFFcfdef3,

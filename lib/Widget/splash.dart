@@ -72,7 +72,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '🤣Da ym Sngewthuh Khasi, Dep nai use ka app🤣',
+                  'Da ym Sngewthuh Khasi, Dep nai use ka app',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
