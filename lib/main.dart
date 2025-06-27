@@ -1,6 +1,8 @@
-import 'package:banpeittarik/Screens/dashboard.dart';
+import 'package:banpeittarik/Main/dashboard.dart';
+import 'package:banpeittarik/Screens/alarm.dart';
 import 'package:banpeittarik/Screens/home.dart';
-import 'package:banpeittarik/Screens/splash.dart';
+import 'package:banpeittarik/Screens/notification.dart';
+import 'package:banpeittarik/Widget/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/dashboard': (context) => const DashboardScreen(),
         '/splash': (context) => const SplashScreen(),
+        '/alarm': (context) => const AlarmScreen(),
+        '/notifications': (context) => const NotificationScreen(),
       },
     );
   }

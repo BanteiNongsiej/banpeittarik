@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+class AlarmScreen extends StatefulWidget {
+  const AlarmScreen({super.key});
+
+  @override
+  State<AlarmScreen> createState() => _AlarmScreenState();
+}
+
+class _AlarmScreenState extends State<AlarmScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar: AppBar(title: const Text('Alarm')),
+      body: Center(
+        child: const Text('Ban buh Alarm', style: TextStyle(fontSize: 24)),
+      ),
+    );
+  }
+}

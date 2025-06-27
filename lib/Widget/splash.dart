@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:banpeittarik/Screens/dashboard.dart';
+import 'package:banpeittarik/Main/dashboard.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -62,7 +62,7 @@ class SplashScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Made with ❤️ From Pongkung',
+                  'Made From Pongkung',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,

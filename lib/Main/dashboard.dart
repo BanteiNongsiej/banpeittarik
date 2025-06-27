@@ -1,4 +1,7 @@
+import 'package:banpeittarik/Screens/alarm.dart';
 import 'package:banpeittarik/Screens/home.dart';
+import 'package:banpeittarik/Screens/notification.dart';
+import 'package:banpeittarik/Widget/tarik_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,13 +14,12 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   final PageController _pageController = PageController();
-  int _currentIndex = 1; // Middle page is HomePage
+  int _currentIndex = 0;
 
   final List<Widget> _pages = const [
-    //TasksPage(),
     HomeScreen(),
-    //AlarmPage(),
-    //SettingsPage(),
+    AlarmScreen(), // Replace with AlarmPage()
+    NotificationScreen(), // Replace with StatsPage()
   ];
 
   void _onItemTapped(int index) {
@@ -32,7 +34,40 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Ban Peit Tarik'), centerTitle: true),
+      drawer: TarikDrawer(
+        onItemSelected: (index) {
+          _onItemTapped(index);
+          Navigator.pop(context); // Close the drawer
+        },
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.grey[300],
+        automaticallyImplyLeading: true,
+        title: Row(
+          children: [
+            // ClipRRect(
+            //   borderRadius: BorderRadius.circular(
+            //     16.0,
+            //   ), // Half of the height/width for a perfect circle
+            //   child: Image.asset(
+            //     'assets/images/Ban_Peit_Tarik_Logo.png',
+            //     fit: BoxFit.cover,
+            //     height: 40,
+            //     width: 40,
+            //   ),
+            // ),
+            // const SizedBox(width: 10),
+            const Text(
+              'Peit Tarik',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 22,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ),
       body: PageView(
         controller: _pageController,
         children: _pages,
@@ -42,8 +77,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.indigo,
+        selectedItemColor: const Color.fromARGB(255, 21, 48, 202),
         unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.grey[300],
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
@@ -53,7 +90,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
             icon: FaIcon(FontAwesomeIcons.clock),
             label: 'Alarm',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Stats'),
           BottomNavigationBarItem(
             icon: FaIcon(FontAwesomeIcons.bell),
             label: 'Notification',
