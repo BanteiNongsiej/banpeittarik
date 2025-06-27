@@ -51,7 +51,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'Ban Peit Tarik',
+                  'Peit Tarik',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
@@ -62,7 +62,7 @@ class SplashScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Made From Pongkung',
+                  'Lah Shna Ha Pongkung',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
@@ -72,7 +72,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Da ym Sngewthuh Khasi, Dep nai use ka app',
+                  'Da ym Sngewthuh Khasi, Dep nai use ka app🤣',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
