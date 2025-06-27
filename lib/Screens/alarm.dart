@@ -74,7 +74,7 @@ class _AlarmScreenState extends State<AlarmScreen> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: addAlarm,
         icon: const Icon(Icons.add_alarm),
-        label: const Text("Add Alarm"),
+        label: const Text("Buh Alarm"),
         backgroundColor: Colors.indigo,
       ),
     );
