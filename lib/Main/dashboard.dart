@@ -18,8 +18,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   final List<Widget> _pages = const [
     HomeScreen(),
-    AlarmScreen(), // Replace with AlarmPage()
-    NotificationScreen(), // Replace with StatsPage()
+    AlarmScreen(),
+    NotificationScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -41,19 +41,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
         },
       ),
       appBar: AppBar(
-        backgroundColor: Colors.grey[300],
+        elevation: 0,
+        backgroundColor: const Color(
+          0xFFcfdef3,
+        ), // Matches drawer gradient bottom
         automaticallyImplyLeading: true,
         title: Row(
           children: [
+            // const SizedBox(width: 4),
             // ClipRRect(
-            //   borderRadius: BorderRadius.circular(
-            //     16.0,
-            //   ), // Half of the height/width for a perfect circle
+            //   borderRadius: BorderRadius.circular(8),
             //   child: Image.asset(
             //     'assets/images/Ban_Peit_Tarik_Logo.png',
+            //     height: 36,
+            //     width: 36,
             //     fit: BoxFit.cover,
-            //     height: 40,
-            //     width: 40,
             //   ),
             // ),
             // const SizedBox(width: 10),
@@ -62,7 +64,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
-                color: Colors.black,
+                color: Color(0xFF2c3e50), // Dark blue-grey
               ),
             ),
           ],
@@ -77,14 +79,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: const Color.fromARGB(255, 21, 48, 202),
-        unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.grey[300],
+        selectedItemColor: const Color(
+          0xFF4b79a1,
+        ), // Matches drawer top gradient
+        unselectedItemColor: Colors.grey[600],
+        backgroundColor: const Color(0xFFe0eafc), // Matches drawer base
         showUnselectedLabels: true,
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
-            label: 'Home',
+            label: 'Iing',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(FontAwesomeIcons.clock),
@@ -92,7 +97,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           BottomNavigationBarItem(
             icon: FaIcon(FontAwesomeIcons.bell),
-            label: 'Notification',
+            label: 'Jing Pyntip',
           ),
         ],
       ),

@@ -36,7 +36,7 @@ class TarikDrawer extends StatelessWidget {
                 ),
               ),
               accountEmail: const Text(
-                'Testing',
+                'Tang ban shu test',
                 style: TextStyle(color: Colors.white70, fontSize: 14),
               ),
               currentAccountPicture: const CircleAvatar(
@@ -48,7 +48,7 @@ class TarikDrawer extends StatelessWidget {
             ),
             _buildDrawerItem(
               icon: Icons.home,
-              text: 'Home',
+              text: 'Iing',
               onTap: () => onItemSelected(0),
             ),
             _buildDrawerItem(
@@ -58,13 +58,13 @@ class TarikDrawer extends StatelessWidget {
             ),
             _buildDrawerItem(
               icon: Icons.notifications,
-              text: 'Notifications',
+              text: 'Jing pyn tip',
               onTap: () => onItemSelected(2),
             ),
             const Divider(thickness: 1, color: Colors.grey),
             _buildDrawerItem(
               icon: Icons.info,
-              text: 'About',
+              text: 'Shaphang ka App',
               onTap: () => Navigator.pushNamed(context, '/about'),
             ),
             _buildDrawerItem(
@@ -74,7 +74,7 @@ class TarikDrawer extends StatelessWidget {
             ),
             _buildDrawerItem(
               icon: Icons.exit_to_app,
-              text: 'Logout',
+              text: 'Mih noh',
               onTap: () => Navigator.pushNamed(context, '/login'),
             ),
           ],

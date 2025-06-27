@@ -1,4 +1,5 @@
 import 'package:banpeittarik/Main/dashboard.dart';
+import 'package:banpeittarik/Screens/about_page.dart';
 import 'package:banpeittarik/Screens/alarm.dart';
 import 'package:banpeittarik/Screens/home.dart';
 import 'package:banpeittarik/Screens/notification.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/splash': (context) => const SplashScreen(),
         '/alarm': (context) => const AlarmScreen(),
         '/notifications': (context) => const NotificationScreen(),
+        '/about': (context) => const AboutScreen(),
       },
     );
   }
