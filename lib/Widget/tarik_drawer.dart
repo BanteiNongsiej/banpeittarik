@@ -84,7 +84,11 @@ class TarikDrawer extends StatelessWidget {
             _buildDrawerItem(
               icon: Icons.exit_to_app,
               text: 'Mih noh',
-              onTap: () => Navigator.pushNamed(context, '/login'),
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Pat leh eiei kane')),
+                );
+              },
             ),
           ],
         ),

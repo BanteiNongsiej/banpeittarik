@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final DateTime _firstMonth = DateTime.utc(2024, 1, 1);
+  final DateTime _firstMonth = DateTime.utc(1980, 1, 1);
   final DateTime _lastMonth = DateTime.utc(DateTime.now().year + 100, 12, 1);
 
   DateTime _selectedDay = DateTime.now();
@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   year.toString(),
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                     color: Colors.black,
                                   ),
@@ -190,6 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             });
                           },
                           headerVisible: false,
+                          availableGestures: AvailableGestures.none,
                           calendarStyle: CalendarStyle(
                             defaultTextStyle: TextStyle(
                               color: Colors.grey[800],
