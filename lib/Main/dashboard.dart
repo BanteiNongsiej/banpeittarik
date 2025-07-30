@@ -34,6 +34,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[50],
       drawer: TarikDrawer(
         onItemSelected: (index) {
           _onItemTapped(index);
@@ -41,36 +42,34 @@ class _DashboardScreenState extends State<DashboardScreen> {
         },
       ),
       appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: Colors.black, 
-        ),
+        iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
-        backgroundColor: const Color(
-          0xFFcfdef3,
-        ), // Matches drawer gradient bottom
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
-        title: Row(
-          children: [
-            // const SizedBox(width: 4),
-            // ClipRRect(
-            //   borderRadius: BorderRadius.circular(8),
-            //   child: Image.asset(
-            //     'assets/images/Ban_Peit_Tarik_Logo.png',
-            //     height: 36,
-            //     width: 36,
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            // const SizedBox(width: 10),
-            const Text(
-              'Peit Tarik',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-                color: Color(0xFF2c3e50), // Dark blue-grey
-              ),
+        title: Text(
+          'Peit Tarik',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.grey[800],
+          ),
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.blue[50]!, Colors.white],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
-          ],
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 0.5,
+                blurRadius: 3,
+                offset: const Offset(0, 1), // changes position of shadow
+              ),
+            ],
+          ),
         ),
       ),
       body: PageView(
@@ -78,31 +77,42 @@ class _DashboardScreenState extends State<DashboardScreen> {
         children: _pages,
         onPageChanged: (index) => setState(() => _currentIndex = index),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: const Color(
-          0xFF4b79a1,
-        ), // Matches drawer top gradient
-        unselectedItemColor: Colors.grey[600],
-        backgroundColor: const Color(0xFFe0eafc), // Matches drawer base
-        showUnselectedLabels: true,
-        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Iing',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.clock),
-            label: 'Alarm',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.bell),
-            label: 'Jing Pyntip',
-          ),
-        ],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              blurRadius: 10,
+              spreadRadius: 2,
+              offset: const Offset(0, -4),
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: _onItemTapped,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.blue[700],
+          unselectedItemColor: Colors.grey[600],
+          backgroundColor: Colors.white,
+          showUnselectedLabels: true,
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+          elevation: 0,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_today),
+              label: 'Iing',
+            ),
+            BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.clock),
+              label: 'Alarm',
+            ),
+            BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.bell),
+              label: 'Jing Pyntip',
+            ),
+          ],
+        ),
       ),
     );
   }

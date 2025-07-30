@@ -1,6 +1,7 @@
 import 'package:banpeittarik/Main/dashboard.dart';
 import 'package:banpeittarik/Screens/about_page.dart';
 import 'package:banpeittarik/Screens/alarm.dart';
+import 'package:banpeittarik/Screens/holiday_list.dart';
 import 'package:banpeittarik/Screens/home.dart';
 import 'package:banpeittarik/Screens/notification.dart';
 import 'package:banpeittarik/Widget/splash.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/alarm': (context) => const AlarmScreen(),
         '/notifications': (context) => const NotificationScreen(),
         '/about': (context) => const AboutScreen(),
+        '/holiday-list': (context) => const HolidaysList(),
       },
     );
   }

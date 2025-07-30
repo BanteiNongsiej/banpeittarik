@@ -32,12 +32,16 @@ class TarikDrawer extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               accountEmail: const Text(
-                'Tang ban shu test',
-                style: TextStyle(color: Colors.white70, fontSize: 14),
+                'Tang ban shu pynsuk peit tarik',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               currentAccountPicture: const CircleAvatar(
                 radius: 30,
@@ -66,6 +70,11 @@ class TarikDrawer extends StatelessWidget {
               icon: Icons.info,
               text: 'Shaphang ka App',
               onTap: () => Navigator.pushNamed(context, '/about'),
+            ),
+            _buildDrawerItem(
+              icon: Icons.list,
+              text: "Ki Sngi Shuti",
+              onTap: () => Navigator.pushNamed(context, '/holiday-list'),
             ),
             _buildDrawerItem(
               icon: Icons.settings,
@@ -102,7 +111,9 @@ class TarikDrawer extends StatelessWidget {
       onTap: onTap,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       tileColor: Colors.transparent,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+      minVerticalPadding: 0,
+      visualDensity: VisualDensity.compact,
     );
   }
 }
