@@ -85,9 +85,7 @@ class TarikDrawer extends StatelessWidget {
               icon: Icons.exit_to_app,
               text: 'Mih noh',
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Pat leh eiei kane')),
-                );
+                showCenteredSnackBar(context, 'Pat leh eiei kane');
               },
             ),
           ],
@@ -120,4 +118,27 @@ class TarikDrawer extends StatelessWidget {
       visualDensity: VisualDensity.compact,
     );
   }
+}
+
+void showCenteredSnackBar(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      duration: const Duration(seconds: 3),
+      backgroundColor: Colors.grey[900],
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      content: Center(
+        child: Text(
+          message,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+  );
 }

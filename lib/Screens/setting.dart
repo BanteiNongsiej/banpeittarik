@@ -57,43 +57,27 @@ class SettingsScreen extends StatelessWidget {
             icon: Icons.language,
             title: 'Jingkylla ktien',
             subtitle: 'English / Khasi',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Pat leh eiei kane')),
-              );
-            },
+            onTap: () => showCenteredSnackBar(context, 'Pat leh eiei kane'),
           ),
           _buildSettingTile(
             icon: Icons.notifications,
             title: 'Ki Jingpyntip',
             subtitle: 'On / Off jingpyntip',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Pat leh eiei kane')),
-              );
-            },
+            onTap: () => showCenteredSnackBar(context, 'Pat leh eiei kane'),
           ),
           const SizedBox(height: 20),
           _buildSectionTitle('Ka Akhant'),
           _buildSettingTile(
             icon: Icons.lock,
-            title: 'Kylla password',
+            title: 'Pyn kylla password',
             subtitle: 'Tyllun password thymmai',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Pat leh eiei kane')),
-              );
-            },
+            onTap: () => showCenteredSnackBar(context, 'Pat leh eiei kane'),
           ),
           _buildSettingTile(
             icon: Icons.delete_forever,
             title: 'Pynkut noh ia ka akhant',
             subtitle: 'Delete permanently',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Pat leh eiei kane')),
-              );
-            },
+            onTap: () => showCenteredSnackBar(context, 'Pat leh eiei kane'),
           ),
           const SizedBox(height: 20),
           _buildSectionTitle('Kiwei kiwei'),
@@ -101,11 +85,7 @@ class SettingsScreen extends StatelessWidget {
             icon: Icons.help_outline,
             title: 'Ka Jingiarap',
             subtitle: 'FAQ bad jingkyrshan',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Pat leh eiei kane')),
-              );
-            },
+            onTap: () => showCenteredSnackBar(context, 'Pat leh eiei kane'),
           ),
           _buildSettingTile(
             icon: Icons.info_outline,
@@ -128,7 +108,7 @@ class SettingsScreen extends StatelessWidget {
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
-          color: Colors.grey[800],
+          color: Colors.black,
         ),
       ),
     );
@@ -161,10 +141,37 @@ class SettingsScreen extends StatelessWidget {
           title,
           style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
         ),
-        subtitle: Text(subtitle, style: TextStyle(color: Colors.grey[600])),
+        subtitle: Text(
+          subtitle,
+          style: TextStyle(color: const Color.fromARGB(255, 117, 115, 115)),
+        ),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
         onTap: onTap,
       ),
     );
   }
+}
+
+/// 🔁 Reusable SnackBar Function
+void showCenteredSnackBar(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      duration: const Duration(seconds: 3),
+      backgroundColor: Colors.grey[900],
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      content: Center(
+        child: Text(
+          message,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+  );
 }
